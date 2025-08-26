@@ -1,0 +1,23 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: budget-planner
+  data-source:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: ${DBUsername}
+    password: ${DBPassword}
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,build
+  endpoint:
+    info:
+      enabled: true
